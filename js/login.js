@@ -1,7 +1,13 @@
-AV.initialize('NKxQxqADy7FiTcXfOgLcuW2p-MdYXbMMI', 'zDzuVVdpuJl6o9qsO6KM21x0');
+function login(){
+  AV.initialize('NKxQxqADy7FiTcXfOgLcuW2p-MdYXbMMI', 'zDzuVVdpuJl6o9qsO6KM21x0');
+  AV.useAVCloudUS();
 
-AV.User.logIn('myname', 'mypass').then(function() {
-  // 成功了，现在可以做其他事情了
-}, function() {
-  // 失败了
-});
+  var username = document.getElementById('username1').value;
+  var password = document.getElementById('password1').value;
+
+  AV.User.logIn(username, password).then(function() {
+    window.location = "index.html";
+  }, function() {
+    document.getElementById('errorMsg').style.display = 'inline';
+  });
+}

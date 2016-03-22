@@ -14,7 +14,6 @@
     <!-- AngularJS -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-    <script type="text/javascript" scr="js/login.js"></script>
 
     <!-- universal CSS-->
     <link rel="stylesheet" type="text/css" href="css/basic.css" charset="utf-8">
@@ -43,9 +42,14 @@
           <div class="col-md-6">
 
             <div class="well" ng-app="">
+
+              <div class="alert alert-danger" id="errorMsg" role="alert" style="display:none">
+                  <strong>Wrong account or password!</strong> Please try again.
+              </div>
+
               <div class="col-md-2">
                 <div class="row">
-                  <label for="inputAccount">Account</label>
+                  <label for="inputAccount">Username</label>
                 </div>
                 <div class="row">
                   <label for="inputPassword">Password</label>
@@ -53,24 +57,22 @@
               </div>
 
               <div class="col-md-10">
-                <input type="text" ng-model="account" class="form-control" placeholder="Admin account">
-                <input type="password" ng-model="password" class="form-control" placeholder="Your password">
+                <input type="text" id="username1" ng-model="username" class="form-control" placeholder="Admin account">
+                <input type="password" id="password1" ng-model="password" class="form-control" placeholder="Your password">
               </div>
 
               <div align="center">
-                <button type="submit" ng-disabled="!account||!password" name="loginButton" class="btn btn-primary btn-md btn-success">Log in</button>
+                <button type="button" onclick="login()" ng-disabled="!username||!password" name="loginButton" class="btn btn-primary btn-md btn-success">aa</button>
               </div>
               <!--add a space here... to keep the well size-->
               &nbsp;
             </div>
           </div>
         </div>
-        <div align="center">
-        </div>
         </form>
       </div>
-
-
+      <script type="text/javascript" src="js/login.js">
+      </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
