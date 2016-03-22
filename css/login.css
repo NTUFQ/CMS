@@ -1,0 +1,20 @@
+
+input{
+  position: relative;
+  margin-top: 20px;
+  float: none;
+}
+
+label{
+  position: relative;
+  margin-top: 25px;
+  float: none;
+}
+
+button{
+  margin: 30px;
+}
+
+h2{
+  margin-top: 200px;
+}
