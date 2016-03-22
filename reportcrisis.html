@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/basic.css" charset="utf-8">
 
     <!-- individual CSS-->
-    <link rel="stylesheet" type="text/css" href="css/index.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/reportcrisis.css" charset="utf-8">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,9 +33,9 @@
 
         <div id="navbar" class="navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="crisislist.html">View crises</a></li>
-            <li><a href="reportcrisis.html">Report crises</a></li>
+            <li class="active"><a href="reportcrisis.html">Report crises</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -47,7 +47,49 @@
     <!-- Menu bar ends-->
 
     <!--where we should add-->
-    <h1>Hello, world!</h1>
+    <div class="container">
+      <h2>Report a crisis</h2>
+      <div class="well">
+        <div class="row">
+          <div class="col-md-1">
+            <label align="right">Title</label>
+          </div>
+          <div class="col-md-11">
+            <input type="text" class="form-control" name="title" id="title" placeholder="Title">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-1">
+            <label>Time</label>
+          </div>
+          <div class="col-md-5">
+            <input type="datetime" class="form-control" name="time" placeholder="mm/dd/hh/mm">
+          </div>
+          <div class="col-md-1">
+            <label>Contact</label>
+          </div>
+          <div class="col-md-5">
+            <input type="tel" class="form-control"  name="contact" placeholder="xxxx xxxx">
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col-md-1">
+            <label>Description</label>
+          </div>
+          <div class="col-md-11">
+            <textarea class="form-control" name="description" rows="10" cols="40" placeholder="Description"></textarea>
+          </div>
+        </div>
+
+        <div align="center">
+          <button type="submit" name="submit" class="btn btn-primary btn-md">Submit</button>
+        </div>
+      </div>
+
+    </div>
 
     <!--Footer starts-->
     <footer class="footer">
