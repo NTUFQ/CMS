@@ -3,6 +3,7 @@ var Crisis = AV.Object.extend(
   {
     defaults:{
       title: "None",
+      code: 0;
       status: 0,
       time: new Date('2016-1-1'),
       contact:'90009000'
@@ -34,10 +35,12 @@ function report() {
   var description2 = document.getElementById('description2').value;
   var longitude2 = document.getElementById('id').value;
   var latitude2 = document.getElementById('id').value;
-
+  var code2 = 0;
+  
   var newCrisis = new Crisis();
   newCrisis.set('title', title2);
   newCrisis.set('status', 0);
+  newCrisis.set('code', code2);
   newCrisis.set('time', time2);
   newCrisis.set('contact', contact2);
   newCrisis.set('description', description2);
