@@ -1,5 +1,5 @@
 function login(){
-  AV.initialize('NKxQxqADy7FiTcXfOgLcuW2p-MdYXbMMI', 'zDzuVVdpuJl6o9qsO6KM21x0');
+  AV.initialize('NKxQxqADy7FiTcXfOgLcuW2p-MdYXbMMI', 'zDzuVVdpuJl6o9qsO6KM21x0');//initialize
   AV.useAVCloudUS();
 
   var username = document.getElementById('username1').value;
