@@ -9,6 +9,9 @@
 
     <!-- Cloud -->
     <script src="js/av-0.4.1.min.js"></script>
+    <script type="text/javascript" src="js/crisis.js"></script>
+    <script type="text/javascript" src="js/loadcrisis.js">
+    </script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- AngularJS -->
@@ -27,7 +30,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body onload="loadcrisis()">
     <!-- Munu bar starts here -->
     <nav class="navbar navbar-default">
       <div class="container">
@@ -52,39 +55,8 @@
 
     <!--where we should add-->
     <div class="container">
-      <div class="well">
-        <p style="color:gray">1hr ago</p>
-        <h4><span class="label label-warning">WARNING</span><a href="#">EVIL Disease in Singapore</a></h4>
-        <li><p>The crisis have been solved.</p></li>
-        <li><p>The crisis have been solved.</p></li>
-        <li><p>The crisis have been solved.</p></li>
-        <li><p>The crisis have been solved.</p></li>
-        <div onclick="showMap(this)">
-          view on map
-        </div>
-        <script src="map1.js" type="text/javascript">
-
-        </script>
-        <div class="progress">
-          <div class="progress-bar progress-bar-warning" style="width: 15%"><span>Reported</span></div>
-          <div class="progress-bar progress-bar-danger" style="width: 15%"><span>Verified</span></div>
-          <div class="progress-bar progress-bar-striped" style="width: 55%"><span>Processing</span></div>
-        </div>
+      <div id="box">
       </div>
-
-      <div class="well">
-        <p style="color:gray">1hr ago</p>
-        <h4><span class="label label-warning">WARNING</span><a href="#">EVIL Disease in Singapore</a></h4>
-        <li><p>The crisis have been solved.</p></li>
-        <li><p>The crisis have been solved.</p></li>
-        <li><p>The crisis have been solved.</p></li>
-        <li><p>The crisis have been solved.</p></li>
-        <div class="progress">
-          <div class="progress-bar progress-bar-warning" style="width: 15%"><span>Reported</span></div>
-          <div class="progress-bar progress-bar-danger" style="width: 15%"><span>Verified</span></div>
-          <div class="progress-bar progress-bar-striped" style="width: 55%"><span>Processing</span></div>
-        </div>
-    </div>
     </div>
 
 

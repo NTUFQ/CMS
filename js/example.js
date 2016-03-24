@@ -1,3 +1,9 @@
+/////////////////////////
+!!below Post is a Class!!
+!!!post is a instance!!!!
+!!!!!!REPLACE!THEM!!!!!!!
+/////////////////////////
+
 //deleting
 myObject.destroy().then(function() {
   // successful
@@ -29,7 +35,6 @@ query.get('558e20cbe4b060308e3eb36c').then(function(post) {
   // if Failed
 });
 
-var post = new Post();
 
 //create
 var post = new Post();

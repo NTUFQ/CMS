@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Home</title>
-
+    <!-- Cloud script -->
+    <script src="js/av-0.4.1.min.js"></script>
+    <script type="text/javascript" src="js/crisis.js"></script>
+    <script type="text/javascript" src="js/reportcrisis.js"></script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- AngularJS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
     <!-- universal CSS-->
     <link rel="stylesheet" type="text/css" href="css/basic.css" charset="utf-8">
@@ -49,13 +54,13 @@
     <!--where we should add-->
     <div class="container">
       <h2>Report a crisis</h2>
-      <div class="well">
+      <div class="well" ng-app="">
         <div class="row">
           <div class="col-md-1">
             <label align="right">Title</label>
           </div>
           <div class="col-md-11">
-            <input type="text" class="form-control" name="title" id="title1" placeholder="Title">
+            <input type="text" id="title" ng-model="title" class="form-control" name="title" placeholder="Title">
           </div>
         </div>
 
@@ -64,13 +69,13 @@
             <label>Time</label>
           </div>
           <div class="col-md-5">
-            <input type="datetime" id="time2" class="form-control" name="time" placeholder="yyyy-mm-dd">
+            <input type="datetime" id="time" ng-model="time" class="form-control" name="time" placeholder="yyyy-mm-dd">
           </div>
           <div class="col-md-1">
             <label>Contact</label>
           </div>
           <div class="col-md-5">
-            <input type="tel" id="contact2" class="form-control"  name="contact" placeholder="xxxx xxxx">
+            <input type="text" id="contact" ng-model="contact" class="form-control"  name="contact" placeholder="xxxx xxxx">
           </div>
         </div>
         <br>
@@ -80,12 +85,12 @@
             <label>Description</label>
           </div>
           <div class="col-md-11">
-            <textarea class="form-control" id="description2" name="description" rows="10" cols="40" placeholder="Description"></textarea>
+            <textarea class="form-control" ng-model="description" id="description" name="description" rows="10" cols="40" placeholder="Description"></textarea>
           </div>
         </div>
 
         <div align="center">
-          <button type="submit" name="submit" class="btn btn-primary btn-md">Submit</button>
+          <button type="button" onclick="report()" ng-disabled="!title||!time||!contact||!description" name="submit" class="btn btn-primary btn-md">Submit</button>
         </div>
       </div>
 

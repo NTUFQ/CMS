@@ -5,3 +5,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.progress{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}

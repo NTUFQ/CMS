@@ -1,8 +1,10 @@
 1. useful info eg.shelters
 2. add code(red black ...)
-3. separate disease and terror
+3. separate crisis into disease and terror - ting yi,
 4. hotlines
 5. faq feedback
 6. send sms
 7. add panel
-8. add role: call operator
+8. add role: call operator (call operator should be only allowed to edit/delete the information they added)
+9. dynamic loading crisis list loading page
+10. add circle in maps

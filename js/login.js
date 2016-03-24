@@ -1,3 +1,4 @@
+
 function login(){
   AV.initialize('NKxQxqADy7FiTcXfOgLcuW2p-MdYXbMMI', 'zDzuVVdpuJl6o9qsO6KM21x0');//initialize
   AV.useAVCloudUS();
@@ -6,7 +7,7 @@ function login(){
   var password = document.getElementById('password1').value;
 
   AV.User.logIn(username, password).then(function() {
-    window.location = "index.html";
+    window.location = "panel.html";
   }, function() {
     document.getElementById('errorMsg').style.display = 'inline';
   });
