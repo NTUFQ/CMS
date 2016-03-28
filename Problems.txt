@@ -1,0 +1,9 @@
+1) Footer is at weird position for some pages
+
+2) Twitter and Facebook - can't get them to work
+
+3) New Attributes for database?
+
+4) Do we still have hazard codes? Yellow, Red, Black etc...
+
+5) FOR adminpanel_update: How to change values for items in database?
