@@ -1,3 +1,5 @@
+
+var map;
 function initMap() {
   var Singapore = {lat: 1.325, lng: 103.85};
   var mapDiv = document.getElementById('map');

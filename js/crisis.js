@@ -21,7 +21,8 @@ var Crisis = AV.Object.extend(
 var CrisisIdList = AV.Object.extend(
   'CrisisIdList', {
     defaults: {
-      crisislist: []
+      crisisList: [],
+      updateLog:[]
     }
   }
 );

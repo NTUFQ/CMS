@@ -4,7 +4,7 @@
  margin: 10px;
   margin-top: 15px;
   margin-right: 5px;
-  margin-left: 10px;  
+  margin-left: 10px;
 }
 
 input{
@@ -20,4 +20,10 @@ label{
 
 textarea{
   margin: 10px;
+}
+#map {
+  position: relative;
+  width: auto;
+  height: 500px;
+  padding: 50px;
 }

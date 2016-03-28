@@ -14,12 +14,15 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- AngularJS -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Map -->
+    <script type="text/javascript" src="map1.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 
     <!-- universal CSS-->
     <link rel="stylesheet" type="text/css" href="css/basic.css" charset="utf-8">
 
     <!-- individual CSS-->
-    <link rel="stylesheet" type="text/css" href="css/adminpanel_create.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="adminpanel_create.css" charset="utf-8">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,10 +34,10 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.1.js">
 </script>
 
-        
+
   </head>
   <body>
-  <!-- FB Initialize 
+  <!-- FB Initialize
    <div id="fb-root"></div>
    <script>
       window.fbAsyncInit = function () {
@@ -80,7 +83,7 @@
     <!--where we should add-->
     <div class="container">
 
-    
+
 
       <h2>Create Crisis</h2>
       <div class="well" ng-app="">
@@ -164,20 +167,26 @@
           </div>
         </div>
         <br>
+        <div id="map">
+          111111111122
+
+        </div>
 
         <div class="row" align="center">
         <form action="">
         <input type="checkbox" name="post_facebook" value="FB" id="select_facebook"> Post On Facebook?<br>
-        <input type="checkbox" name="post_twitter" value="Twit" id="select_twitter"> Post On Twitter? 
+        <input type="checkbox" name="post_twitter" value="Twit" id="select_twitter"> Post On Twitter?
         </form>
         <button id="btnTweet" onclick="tweet();" >Tweet</button>
         </div>
+
+
 
      <!-- FB TEST
     <div align="center">
         <input type="button" id="postButton" value="Post" onclick="PostMessage();" />
         <br>
-        
+
     </div>
     -->
 
@@ -188,21 +197,19 @@
       </div>
 
     </div>
-    
 
-  
-    
 
-    <!--Footer starts-->
+
+
+
+    <!--Footer starts>
     <footer class="footer">
-      <div class="container">
         <p>CZ3003 Crisis Management System. All right reserved.</p>
-      </div>
     </footer>
-    <!-- Footer ends-->
+    < Footer ends-->
 
-    <script src="//connect.facebook.net/en_US/all.js"></script>
-    <script type="text/javascript" src="js/adminpanel_create.js"></script>
+    <!--script src="//connect.facebook.net/en_US/all.js"></script-->
+    <script type="text/javascript" src="adminpanel_create.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
