@@ -34,4 +34,7 @@ function initialize() {
   }, function(err) {
     console.log('Failed to create new object, with error message: ' + err.message);
   });
+
+  var crisisIdList = new CrisisIdList();
+  var crisisObjectList = [];
 }
