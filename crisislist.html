@@ -10,7 +10,7 @@
     <!-- Cloud -->
     <script src="js/av-0.4.1.min.js"></script>
     <script type="text/javascript" src="js/crisis.js"></script>
-    <script type="text/javascript" src="js/loadcrisis.js">
+    <script type="text/javascript" src="js/user_viewcrisis.js">
     </script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -54,11 +54,33 @@
     <!-- Menu bar ends-->
 
     <!--where we should add-->
-    <div class="container">
-      <div id="box">
-      </div>
-    </div>
 
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-1 col-md-offset-2"><label align='right'>Status</label></div>
+        <div class="col-md-3">
+          <select class="form-control"  name="StatusSelect" id="statusselector" onchange="loadcrisis()" style="width:70%">
+            <option selected value=1>Verified ONLY</option>
+            <option  value=0> All</option>
+          </select>
+        </div>
+        <div class="col-md-1"><label align='right'>Type</label></div>
+        <div class="col-md-3">
+          <select class="form-control" name="TypeSelect" id="typeselector" onchange="loadcrisis()" style="width:70%">
+            <option selected value=2> All</option>
+            <option  value=0> Terror ONLY</option>
+            <option  value=1> Disease ONLY</option>
+          </select>
+        </div>
+      </div>
+      <br></br>
+
+
+
+    <div id="box">
+    </div>
+  </div>
 
     <!--Footer starts-->
     <footer class="footer">

@@ -13,28 +13,7 @@ function initialize() {
         location: {lat: 0, lng: 0},
         events:[],
         contact:88888888
-      },
-
-      initialize: function(){
-        if (!this.get("title")) {
-          this.set({"title": this.defaults.title});
-        }
-      },
-
-      updateLevel: function(level){
-        this.set({"status": level});
-      },
+      }
     }
   );
-
-  var c = new Crisis();
-  c.set('title','success');
-  c.save().then(function(post) {
-    console.log('New object created with objectId: ' + post.id);
-  }, function(err) {
-    console.log('Failed to create new object, with error message: ' + err.message);
-  });
-
-  var crisisIdList = new CrisisIdList();
-  var crisisObjectList = [];
 }

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Admin Panel Overview</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <script src="js/av-0.4.1.min.js"></script>
+    <script src="js/crisis.js"></script>
+    <script src="js/admin_updatecrisis.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+
+
+  </head>
+
+  <body onload = 'loadcrisistoupdate()'>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">CMS Admin Panel</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="dashboard.html">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="dashboard_post.html">Post</a></li>
+            <li class = "active"><a href="#">Update</a></li>
+
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+          <div class="container">
+            <h2>Update Crisis</h2>
+            <div class="well" ng-app="">
+              <div class="row">
+                <div class="col-md-1">
+                  <label>Name of Crisis</label>
+                </div>
+                <div class="col-md-11">
+                  <input type="text" id="crisis_name" ng-model="crisis_name" class="form-control" name="crisis_name" placeholder="Name of Crisis">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-1">
+                  <label>Date</label>
+                </div>
+                <div class="col-md-5">
+                  <input type="datetime" id="date" ng-model="date" class="form-control" name="date" placeholder="yyyy-mm-dd">
+                </div>
+                <div class="col-md-1">
+                  <label>Time</label>
+                </div>
+                <div class="col-md-5">
+                  <input type="time" id="time" ng-model="time" class="form-control" name="time" placeholder="12:00PM">
+                </div>
+                </div>
+              <br>
+              <div class="row">
+                <div class="col-md-1">
+                  <label>Crisis Type</label>
+                </div>
+                <div class="col-md-5">
+                  <select name="crisis_type" id="crisis_type">
+                    <option value="0" id="type_terror">Terror</option>
+                    <option value="1" id="type_disease">Disease</option>
+                  </select>
+               </div>
+               <div class ="col-md-1">
+                  <label>Crisis Status</label>
+                </div>
+                <div class="col-md-5">
+                  <select id = "crisis_status">
+                    <option value="0">Reported</option>
+                    <option value="1">Verified</option>
+                    <option value="2">Processing</option>
+                    <option value="3">Finished</option>
+                 </select>
+               </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-1">
+                  <label>Colour Code</label>
+                </div>
+                <div class="col-md-5">
+                  <select name="crisis_code" id="crisis_code">
+                    <option value="0" id="YELLOW">Yellow</option>
+                    <option value="1" id="RED">Red</option>
+                    <option value="2" id="RED">Black</option>
+                  </select>
+               </div>
+             </div>
+
+              <div class="row">
+                <div class="col-md-1">
+                  <label>Longitude</label>
+                </div>
+                <div class="col-md-5">
+                  <label type="text" id="longitude_new" ng-model="longitude" class="form-control"  name="longitude_new" placeholder="Enter new longitude...">
+                </div>
+                <div class="col-md-1">
+                  <label>Latitude</label>
+                </div>
+                <div class="col-md-5">
+                  <label type="text" id="latitude_new" ng-model="latitude" class="form-control"  name="latitude_new" placeholder="Enter new latitude...">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-1">
+                  <label>Nearest Civil Defense Shelters</label>
+                </div>
+                <div class="col-md-5">
+                  <input type="text" id="cd_shelter1" ng-model="cd_shelter1" class="form-control"  name="cd_shelter1" placeholder="Safety 1">
+                </div>
+                <div class="col-md-5">
+                  <input type="text" id="cd_shelter2" ng-model="cd_shelter2" class="form-control"  name="cd_shelter2" placeholder="Safety 2">
+                </div>
+                <div class="col-md-5">
+                  <input type="text" id="cd_shelter3" ng-model="cd_shelter3" class="form-control"  name="cd_shelter3" placeholder="Safety 3">
+                </div>
+                <div class="col-md-5">
+                  <input type="text" id="cd_shelter4" ng-model="cd_shelter4" class="form-control"  name="cd_shelter4" placeholder="Safety 4">
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class="col-md-1">
+                  <label>Description</label>
+                </div>
+                <div class="col-md-11">
+                  <textarea class="form-control" ng-model="description" id="description" name="description" rows="10" cols="40" placeholder="Description"></textarea>
+                </div>
+              </div>
+              <br>
+              <div id="map"></div>
+              <div id="floating-panel">
+                  <input id="address" type="textbox" value="Singapore">
+                  <input id="Geocode" type="button" value="Geocode">
+              </div>
+              <br>
+              <script>
+                  function updateTweetButtonText() {
+                      var title = document.getElementById("crisis_name").value;
+                      var des = document.getElementById("description").value;
+                      var message = "UPDATE:\n" + title + ': ' + des;
+                      if (message.length > 140) { message = message.substring(0, 119); }
+                      var tweetButton = document.getElementById('tweet-button');
+                      tweetButton.src = tweetButton.src.replace(/&text=[^&]+/, "&text=" + encodeURIComponent(message));
+                      setTimeout(updateTweetButtonText, 1000);
+                  }
+                  function init() {
+                      setTimeout(updateTweetButtonText, 2000);
+                  }
+                      </script>
+                      <script>            init();</script>
+
+                      <div align="center">
+                        <iframe id="tweet-button" allowtransparency="true" frameborder="0" scrolling="no"
+                          src="http://platform.twitter.com/widgets/tweet_button.html?via=SystemAdmin&amp;text=Replace%20Me&amp;count=horizontal"
+                          style="width:61px; height:25px;">
+                        </iframe>
+                        <div align="center"><div id='fb-root'></div>
+              <script src='http://connect.facebook.net/en_US/all.js'></script>
+              <p>
+                  <a href="javascript:;" onclick='postToFeed(); return false;'><img src = "fb_icon.png" alt = "Post to Facebook" style = "width:50px; height:50px"></a>
+              </p>
+              <p id='msg'></p></div>
+                      </div>
+
+              <script>
+                  FB.init({ appId: '1690300737908758', status: true, cookie: true });
+
+                  function postToFeed() {
+                      var title = document.getElementById("crisis_name").value;
+                      var des = document.getElementById("description").value;
+                      var message = "UPDATE TO EXISTING CRISIS:\n" + title + ": " + des;
+                      // calling the API ...
+                      FB.api('/1742004312677925/feed', 'post',
+                            {
+                                // for the newer versions of the Facebook API you need to add the access token
+                                access_token: 'CAACEdEose0cBAGGvs1WNQUAXqnFXL6y405lKCebZCXc5dP2ky9Hf0iAXRa0KsR73yqUNWZA6EM6G4ZBD7hxohUsGLoImOQiJDQRHlAAj3vFTwj4NnbtrZAdR4DqWooUSipK3tbdSTthJCHmP6ci0sodEnZAqkVPdi1ENmaXst0YlX7jLoyfw0pQyvSJYtsb8ZD',
+                                message: message,
+                                //link: 'http://stackoverflow.com',
+                                // picture: 'https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl.png',
+                                name: 'Featured of the Day',
+                                to: '1742004312677925',
+                                from: '1742004312677925',
+                                description: 'Your description'
+                            },
+                        function (response) {
+
+                            if (!response || response.error) {
+                                alert(JSON.stringify(response.error));
+                            } else {
+                                alert('Post ID: ' + response.id);
+                            }
+                        });
+                  }
+
+              </script>
+              <div align="center">
+                <button type="button" onclick="updatecrisis()" ng-disabled="!title||!time||!contact||!description" name="submit" class="btn btn-primary btn-md">Update Crisis</button>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+
+  </body>
+</html>

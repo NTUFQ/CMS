@@ -12,3 +12,14 @@ label{
 textarea{
   margin: 10px;
 }
+
+input:invalid {
+    border-color: red;
+}
+
+#map {
+  position: relative;
+  width: auto;
+  height: 500px;
+  padding: 50px;
+}

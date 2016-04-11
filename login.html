@@ -47,19 +47,16 @@
                   <strong>Wrong account or password!</strong> Please try again.
               </div>
 
-              <div class="col-md-2">
-                <div class="row">
-                  <label for="inputAccount">Username</label>
-                </div>
-                <div class="row">
-                  <label for="inputPassword">Password</label>
-                </div>
-              </div>
 
-              <div class="col-md-10">
-                <input type="text" id="username1" ng-model="username" class="form-control" placeholder="Admin account">
-                <input type="password" id="password1" ng-model="password" class="form-control" placeholder="Your password">
-              </div>
+                <div class="input-group">
+                  <span class="input-group-addon"><strong>Username</strong></span>
+                  <input type="text" id="username1" ng-model="username" class="form-control" placeholder="Admin account">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"><Strong>Password</Strong></span>
+                  <input type="password" id="password1" ng-model="password" class="form-control" placeholder="Your password">
+                </div>
+
 
               <div align="center">
                 <button type="button" onclick="login()" ng-disabled="!username||!password" name="loginButton" class="btn btn-primary btn-md btn-success">Log in</button>

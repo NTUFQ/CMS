@@ -1,28 +1,46 @@
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: {lat: 1.325, lng: 103.85}
+  });
+  var geocoder = new google.maps.Geocoder();
+  document.getElementById('Geocode').addEventListener('click', function() {
+    //marker.setMap(null);
+    geocodeAddress(geocoder, map);
+  });
+}
+
+function geocodeAddress(geocoder, resultsMap) {
+  //clearMarkers();
+  var address = document.getElementById('address').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      //alert(results[0].geometry.location.lat());
+      document.getElementById('longitude').innerHTML = results[0].geometry.location.lng();
+      document.getElementById('latitude').innerHTML = results[0].geometry.location.lat();
+      //alert(savedlocation);
+      resultsMap.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
 function report(){
   AV.initialize('NKxQxqADy7FiTcXfOgLcuW2p-MdYXbMMI', 'zDzuVVdpuJl6o9qsO6KM21x0');
   AV.useAVCloudUS();
-
-  /*
-  //create a new crisislist to get its id when initialing.
-  var crisisList = new Crisislist();
-  crisisList.set('length',0);
-  crisisList.set('crisislist',[]);
-  crisisList.set('updatetime', new Date());
-  crisisList.save().then(function(crisisList) {
-    console.log('New object created with objectId: ' + crisisList.id);
-  }, function(err) {
-    // if failed
-    console.log('Failed to create new object, with error message: ' + err.message);
-  });
-  */
 
   //get all elements required.
   var title2 = document.getElementById('title').value;
   var time2 = new Date(document.getElementById('time').value);
   var contact2 = document.getElementById('contact').value;
   var description2 = document.getElementById('description').value;
-  var longitude2 = 0;//document.getElementById('id').value;
-  var latitude2 = 0;//document.getElementById('id').value;
+  var longitude2 = Number(document.getElementById('longitude').innerHTML);
+  var latitude2 = Number(document.getElementById('latitude').innerHTML);
   var code2 = 0;
 
   //save them in a Crisis instance.

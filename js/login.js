@@ -7,7 +7,7 @@ function login(){
   var password = document.getElementById('password1').value;
 
   AV.User.logIn(username, password).then(function() {
-    window.location = "panel.html";
+    window.location = "dashboard.html";
   }, function() {
     document.getElementById('errorMsg').style.display = 'inline';
   });

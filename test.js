@@ -39,7 +39,7 @@ function getMsg() {
   console.log('finish getting');
 }
 
-setInterval(getMsg, 60000);
+setInterval(getMsg, 7000);
 /*
 // 每次调用生成一个聊天实例
 createNew();
