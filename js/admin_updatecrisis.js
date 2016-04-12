@@ -67,7 +67,12 @@ function updatecrisis(){
     post.set('type',Number(document.getElementById("crisis_type").value));
     post.set('longitude',Number(document.getElementById("longitude_new").innerHTML));
     post.set('latitude',Number(document.getElementById("latitude_new").innerHTML));
-
+    var allshelter = [];
+    allshelter.push(shelter[parseInt(document.getElementById('cd_shelter1').value)]);
+    allshelter.push(shelter[parseInt(document.getElementById('cd_shelter2').value)]);
+    allshelter.push(shelter[parseInt(document.getElementById('cd_shelter3').value)]);
+    allshelter.push(shelter[parseInt(document.getElementById('cd_shelter4').value)]);
+    post.set('shelter',allshelter);
     post.save();
     alert ("Update Successfull");
     window.location="dashboard.html";

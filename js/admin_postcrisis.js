@@ -70,27 +70,20 @@ function admin_postcrisis(){
   newCrisis.set('longitude', Number(longitude2));
   newCrisis.set('latitude', Number(latitude2));
   newCrisis.set('type', Number(type));
+  var allshelter = [];
+  allshelter.push(shelter[parseInt(document.getElementById('cd_shelter1').value)]);
+  allshelter.push(shelter[parseInt(document.getElementById('cd_shelter2').value)]);
+  allshelter.push(shelter[parseInt(document.getElementById('cd_shelter3').value)]);
+  allshelter.push(shelter[parseInt(document.getElementById('cd_shelter4').value)]);
+  newCrisis.set('shelter',allshelter);
   newCrisis.save().then(function(newCrisis) {
     console.log('New object created with objectId: ' + newCrisis.id);
-    //update crisislist
-    var updatecrisislist = new Crisislist();
-    var crisislistquery = new AV.Query(Crisislist);
-    //get crisislist
-    crisislistquery.get(crisislistid).then(function(updatecrisislist) {
-      var updatelist = updatecrisislist.get('crisislist');
-      updatelist.push(newCrisis.id);
-      updatecrisislist.set('crisislist', updatelist);
-      updatecrisislist.set('length', updatelist.length);
-      updatecrisislist.set('updatetime', new Date());
-      updatecrisislist.save();
+    //update crisislis
       console.log('Update crisislist successful!');
-      //window.location = "dashboard.html";
+      window.location = "dashboard.html";
     }, function(error) {
       // if failed
-      console.log('Failed to update crisislist.');
+      console.log('Failed to update crisis.');
       //actually we have to delete the crisis object created
     });
-  }, function(err) {
-    console.log('Failed to create new object, with error message: ' + err.message);
-  });
 }

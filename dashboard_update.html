@@ -18,6 +18,7 @@
     <script src="js/admin_updatecrisis.js"></script>
     <script src="js/sendSMSandEmail.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/shelter.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 
 
@@ -141,17 +142,45 @@
                   <label>Nearest Civil Defense Shelters</label>
                 </div>
                 <div class="col-md-5">
-                  <input type="text" id="cd_shelter1" ng-model="cd_shelter1" class="form-control"  name="cd_shelter1" placeholder="Safety 1">
+                  <select type="text" id="cd_shelter1" ng-model="cd_shelter1" class="form-control"  name="cd_shelter1" placeholder="Safety 1">
+                    <option value=0></option>
+                    <option value=1>Shelter A</option>
+                    <option value=2>Shelter B</option>
+                    <option value=3>Shelter C</option>
+                    <option value=4>Shelter D</option>
+                    <option value=5>Shelter E</option>
+                  </select>
                 </div>
                 <div class="col-md-5">
-                  <input type="text" id="cd_shelter2" ng-model="cd_shelter2" class="form-control"  name="cd_shelter2" placeholder="Safety 2">
+                  <select type="text" id="cd_shelter2" ng-model="cd_shelter1" class="form-control"  name="cd_shelter1" placeholder="Safety 1">
+                    <option value=0></option>
+                    <option value=1>Shelter A</option>
+                    <option value=2>Shelter B</option>
+                    <option value=3>Shelter C</option>
+                    <option value=4>Shelter D</option>
+                    <option value=5>Shelter E</option>
+                  </select>
                 </div>
                 <div class="col-md-5">
-                  <input type="text" id="cd_shelter3" ng-model="cd_shelter3" class="form-control"  name="cd_shelter3" placeholder="Safety 3">
+                  <select type="text" id="cd_shelter3" ng-model="cd_shelter1" class="form-control"  name="cd_shelter1" placeholder="Safety 1">
+                    <option value=0></option>
+                    <option value=1>Shelter A</option>
+                    <option value=2>Shelter B</option>
+                    <option value=3>Shelter C</option>
+                    <option value=4>Shelter D</option>
+                    <option value=5>Shelter E</option>
+                  </select>
                 </div>
                 <div class="col-md-5">
-                  <input type="text" id="cd_shelter4" ng-model="cd_shelter4" class="form-control"  name="cd_shelter4" placeholder="Safety 4">
-                </div>
+                  <select type="text" id="cd_shelter4" ng-model="cd_shelter1" class="form-control"  name="cd_shelter1" placeholder="Safety 1">
+                    <option value=0></option>
+                    <option value=1>Shelter A</option>
+                    <option value=2>Shelter B</option>
+                    <option value=3>Shelter C</option>
+                    <option value=4>Shelter D</option>
+                    <option value=5>Shelter E</option>
+                  </select>
+              </div>
               </div>
               <br>
 
@@ -212,7 +241,7 @@
                         </div>
 
                         <div align="left" class="float-right">
-                          <button type="button" onclick="admin_postcrisis()" ng-disabled="!title||!time||!contact||!description" name="submit" class="btn btn-primary btn-md btn-big">Post Crisis</button>
+                          <button type="button" onclick="updatecrisis()" ng-disabled="!title||!time||!contact||!description" name="submit" class="btn btn-primary btn-md btn-big">Post Crisis</button>
                         </div>
 
                         <div align="left" class="padding-right-20">

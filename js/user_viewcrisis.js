@@ -73,6 +73,9 @@ function loadcrisis(){
                 <h4><span class='label `+ labelclass +`'>`+ labeltext +`</span><a href='#'>`+ crisislist[i].get('title') +`</a><span style="margin-left:10px" class='glyphicon glyphicon-map-marker' onclick="showimage('`+crisislist[i].id+`')"></span></h4>
                 <p>`+ descriptiontext
                  + `</p>
+                 <div class='row'>
+                 <label style='margin-left:25px'>Avaliable shelter:</label>
+                 `+crisislist[i].get('shelter')+`</div>
                  <img id="`+crisislist[i].id+`"style='margin-left:20px;display:none'  src="https://maps.googleapis.com/maps/api/staticmap?center=`+crisislist[i].get('latitude')+","+crisislist[i].get('longitude')+`&zoom=13&size=400x200&maptype=roadmap&markers=color:red%7C`+crisislist[i].get('latitude')+","+crisislist[i].get('longitude')+`">
                 </script>
                 <div class='progress'>

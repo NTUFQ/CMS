@@ -13,7 +13,9 @@ var Crisis = AV.Object.extend(
       description: 'no description yet',
       longitude: 0,
       latitude: 0,
-      events:[]
+      events:[],
+      shelter:[]
+
     }
   }
 );
