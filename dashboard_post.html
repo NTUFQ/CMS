@@ -16,6 +16,8 @@
     <script src="js/av-0.4.1.min.js"></script>
     <script src="js/crisis.js"></script>
     <script src="js/admin_postcrisis.js"></script>
+    <script src="js/sendSMSandEmail.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 
 
@@ -38,6 +40,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.html">Log out</a></li>
+
           </ul>
         </div>
       </div>
@@ -49,7 +52,7 @@
           <ul class="nav nav-sidebar">
             <li><a href="dashboard.html">Overview <span class="sr-only">(current)</span></a></li>
             <li class="active"><a href="dashboard_post.html">Post</a></li>
-
+            <li><a href="dashboard_update.html">Update</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -181,26 +184,55 @@
                       if (message.length > 140) { message = message.substring(0, 119); }
                       var tweetButton = document.getElementById('tweet-button');
                       tweetButton.src = tweetButton.src.replace(/&text=[^&]+/, "&text=" + encodeURIComponent(message));
-                      setTimeout(updateTweetButtonText, 1000);
                   }
                   function init() {
                       setTimeout(updateTweetButtonText, 2000);
                   }
                       </script>
                       <script>            init();</script>
+                      <div>
+                        <div class="float-left">
+                          <form id="SMSForm" class="form">
+                            Send SMS to
+                            <select name="target">
+                              <option>Emergency Ambulance SCDF</option>
+                              <option>Rescue and Evacuation SCDF</option>
+                              <option>Fire-Fignting SCDF</option>
+                              <option>Gas Leak Control Singapore Power</option>
+                            </select>
+                            <input type="button" value="Send SMS" onclick="sendSMS()">
+                          </form>
 
-                      <div align="center">
-                        <iframe id="tweet-button" allowtransparency="true" frameborder="0" scrolling="no"
-                          src="http://platform.twitter.com/widgets/tweet_button.html?via=SystemAdmin&amp;text=Replace%20Me&amp;count=horizontal"
-                          style="width:61px; height:25px;">
-                        </iframe>
-                        <div align="center"><div id='fb-root'></div>
-              <script src='http://connect.facebook.net/en_US/all.js'></script>
-              <p>
-                  <a href="javascript:;" onclick='postToFeed(); return false;'><img src = "fb_icon.png" alt = "Post to Facebook" style = "width:50px; height:50px"></a>
-              </p>
-              <p id='msg'></p></div>
-                      </div>
+                          <form id="EmailForm">
+                            Send email to
+                            <select name="target">
+                              <option>Emergency Ambulance SCDF</option>
+                              <option>Rescue and Evacuation SCDF</option>
+                              <option>Fire-Fignting SCDF</option>
+                              <option>Gas Leak Control Singapore Power</option>
+                            </select>
+                            <input type="button" value="Send email" onclick="sendemail()">
+                          </form>
+                          <span id="notifier" class="red"></span>
+                        </div>
+
+                        <div align="left" class="float-right">
+                          <button type="button" onclick="admin_postcrisis()" ng-disabled="!title||!time||!contact||!description" name="submit" class="btn btn-primary btn-md btn-big">Post Crisis</button>
+                        </div>
+
+                        <div align="left" class="padding-right-20">
+                          <iframe id="tweet-button" allowtransparency="true" frameborder="0" scrolling="no"
+                            src="http://platform.twitter.com/widgets/tweet_button.html?via=SystemAdmin&amp;text=Replace%20Me&amp;count=horizontal"
+                            style="width:61px; height:25px;">
+                          </iframe>
+                          <div align="left"><div id='fb-root'></div>
+                          <script src='http://connect.facebook.net/en_US/all.js'></script>
+                          <p>
+                              <a href="javascript:;" onclick='postToFeed(); return false;'><img src = "fb_icon.png" alt = "Post to Facebook" style = "width:50px; height:50px"></a>
+                          </p>
+                          <p id='msg'></p></div>
+                        </div>
+                    </div>
 
               <script>
                   FB.init({ appId: '1690300737908758', status: true, cookie: true });
@@ -233,9 +265,7 @@
                   }
 
               </script>
-              <div align="center">
-                <button type="button" onclick="admin_postcrisis()" ng-disabled="!title||!time||!contact||!description" name="submit" class="btn btn-primary btn-md">Post Crisis</button>
-              </div>
+
         </div>
       </div>
     </div>

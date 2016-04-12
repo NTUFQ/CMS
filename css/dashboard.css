@@ -109,3 +109,31 @@ body {
   height: 500px;
   padding: 50px;
 }
+
+.padding-right-20{
+  padding-right: 20px;
+}
+
+.float-left{
+  float: left;
+  margin-right: 100px;
+  margin-left: 50px;
+}
+
+.float-right{
+  float: right;
+  margin-top: 10px;
+  margin-right: 200px;
+}
+
+.btn-big{
+  font-size: 30px;
+}
+
+.form{
+  margin-bottom: 25px;
+}
+
+.red{
+  color: #428bca;
+}
